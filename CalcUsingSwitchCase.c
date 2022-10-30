@@ -7,8 +7,11 @@
     int a, b, c;
     char ch;
     printf("enter two number\n");
+    // stdout need to be flushed
+    fflush(stdout);
     scanf("%d%d", & a, & b);
     fflush(stdin);
+    printf("insert number is: %d %d\n", a, b);
     //flush the input buffer. You might use this function if you think that there might be
     //some data in input buffer which can create problems for you while taking user inputs from stdin.
     printf("enter your choice\n");
@@ -17,6 +20,7 @@
     printf("3. enter 3 for multiplication\n");
     printf("4. Enter 4 for division\n");
     printf("5. enter 5 for modulo division\n");
+    fflush(stdout);
     scanf("%c", & ch);
     switch (ch) {
     case '1':
