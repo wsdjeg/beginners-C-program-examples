@@ -3,26 +3,26 @@
 //For instance, 5/3 will be shown as 0. This is because we have declared c as integer and not float.
 
 #include <stdio.h>
-  int main() {
-    int a, b, c;
-    char ch;
-    printf("enter two number\n");
-    // stdout need to be flushed
-    fflush(stdout);
-    scanf("%d%d", & a, & b);
-    fflush(stdin);
-    printf("insert number is: %d %d\n", a, b);
-    //flush the input buffer. You might use this function if you think that there might be
-    //some data in input buffer which can create problems for you while taking user inputs from stdin.
-    printf("enter your choice\n");
-    printf("1. enter 1 for addition\n");
-    printf("2. enter 2 for subtraction\n");
-    printf("3. enter 3 for multiplication\n");
-    printf("4. Enter 4 for division\n");
-    printf("5. enter 5 for modulo division\n");
-    fflush(stdout);
-    scanf("%c", & ch);
-    switch (ch) {
+int main() {
+  int a, b, c;
+  char ch;
+  printf("enter two number\n");
+  // stdout need to be flushed
+  fflush(stdout);
+  scanf("%d%d", & a, & b);
+  fflush(stdin);
+  printf("insert number is: %d %d\n", a, b);
+  //flush the input buffer. You might use this function if you think that there might be
+  //some data in input buffer which can create problems for you while taking user inputs from stdin.
+  printf("enter your choice\n");
+  printf("1. enter 1 for addition\n");
+  printf("2. enter 2 for subtraction\n");
+  printf("3. enter 3 for multiplication\n");
+  printf("4. Enter 4 for division\n");
+  printf("5. enter 5 for modulo division\n");
+  fflush(stdout);
+  scanf("%c", & ch);
+  switch (ch) {
     case '1':
       c = a + b;
       break;
@@ -39,9 +39,10 @@
       c = a % b; //Modulus division only works with integers.
       break;
     default:
-      printf("wrong choice");
-    }
-    printf("calculated value=%d", c);
-
-    return 0;
+      printf("wrong choice!\n");
+      return 1;
   }
+  printf("calculated value=%d", c);
+
+  return 0;
+}
